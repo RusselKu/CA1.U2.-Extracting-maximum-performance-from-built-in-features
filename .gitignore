@@ -1,0 +1,33 @@
+# Archivos de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python/
+env/
+venv/
+.venv/
+
+# Paquetes y distribuciones
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Archivos de testing/linting
+.pytest_cache/
+.mypy_cache/
+
+
+# Archivos de datos generados
+case_study/original/data/
+
+
+
+# Archivos del sistema operativo y editores
+.DS_Store
+Thumbs.db
+.vscode/
+*.log
+*.tmp
+*.swp
