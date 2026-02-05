@@ -4,7 +4,11 @@ import datetime
 import sys
 import requests
 
-stations = sys.argv[1].split(",")
+raw_stations = sys.argv[1].split(",")
+stations = []
+for s in raw_stations:
+    # NOAA station IDs are typically 11 digits. Pad with leading zeros if stripped.
+    stations.append(s.zfill(11))
 years = [int(year) for year in sys.argv[2].split("-")]
 start_year = years[0]
 end_year = years[1]
@@ -18,7 +22,8 @@ def download_data(station, year):
     if req.status_code != 200:
         return # not found
     
-    with open(TEMPLATE_FILE.format(station=station, year=year), "wt") as w:
+    file_name = TEMPLATE_FILE.format(station=station, year=year)
+    with open(file_name, "wt") as w:
         w.write(req.text)
 
 def download_all_data(stations, start_year, end_year):
