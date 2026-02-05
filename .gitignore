@@ -24,8 +24,9 @@ case_study/original/data/
 station_*.csv # Ignorar específicamente los archivos de estación generados
 
 # Archivos de profiling generados
-profiling_results/*.prof
-profiling_results/*.lprof
+profiling_results/
+*.prof
+*.lprof
 
 # Archivos del sistema operativo y editores
 .DS_Store
