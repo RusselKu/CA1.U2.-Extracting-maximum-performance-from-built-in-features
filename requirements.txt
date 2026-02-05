@@ -1,3 +1,5 @@
 snakeviz
 line_profiler
 requests
+matplotlib
+numpy
